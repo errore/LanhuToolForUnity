@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="NoSelected" style="position: absolute; left: 0; top: 0; right: 0; display: flex;">
+        <ui:GroupBox>
+            <ui:Label text="未选择UI元素" display-tooltip-when-elided="true" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+    <ui:VisualElement name="EditorRoot" style="align-items: stretch; flex-direction: column; justify-content: flex-start; flex-shrink: 0;">
+        <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+            <ui:Toggle name="SetColor" value="false" label="设置颜色" />
+        </ui:VisualElement>
+        <ui:RadioButtonGroup value="-1" name="Mode" style="flex-direction: column;">
+            <ui:RadioButton label="居中" name="RadioCenter" value="true" style="flex-shrink: 0;" />
+            <ui:RadioButton label="左上" value="false" name="RadioLeftUp" style="flex-shrink: 0; flex-grow: 0;" />
+        </ui:RadioButtonGroup>
+        <ui:VisualElement style="flex-direction: row; justify-content: space-around; align-items: center;">
+            <ui:Button display-tooltip-when-elided="true" name="BtnSetAll" text="全部" style="-unity-text-align: middle-center; flex-grow: 1;" />
+            <ui:Button text="位置" display-tooltip-when-elided="true" name="BtnSetPos" style="flex-grow: 1;" />
+            <ui:Button text="大小" display-tooltip-when-elided="true" name="BtnSetSize" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:Foldout text="手动模式" value="false">
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Label text="位置" display-tooltip-when-elided="true" style="flex-grow: 0.2;" />
+                <ui:TextField picking-mode="Ignore" value="0" text="0" name="PositionX" style="flex-grow: 0.4;" />
+                <ui:TextField picking-mode="Ignore" value="0" text="0" name="PositionY" style="flex-grow: 0.4;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Label text="大小" display-tooltip-when-elided="true" style="flex-grow: 0.2;" />
+                <ui:TextField picking-mode="Ignore" value="0" text="0" name="SizeX" style="flex-grow: 0.4;" />
+                <ui:TextField picking-mode="Ignore" value="0" text="0" name="SizeY" style="flex-grow: 0.4;" />
+            </ui:VisualElement>
+            <uie:ColorField label="Color" value="#FFFFFFFF" name="Color" />
+            <ui:Button text="应用" display-tooltip-when-elided="true" name="BtnApply" />
+        </ui:Foldout>
+    </ui:VisualElement>
+</ui:UXML>
